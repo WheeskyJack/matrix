@@ -24,6 +24,7 @@ func Insert(a []int, pos, val int) (b []int, err error) {
 	return
 }
 
+//Delete deletes the element in the array present at given postion
 func Delete(a []int, pos int) (b []int, err error) {
 	pos -= startOfArrayIndex
 	if len(a) <= pos || pos < 0 {
@@ -35,6 +36,7 @@ func Delete(a []int, pos int) (b []int, err error) {
 	return
 }
 
+//Reverse reverses the array of integer.
 func Reverse(a []int) (b []int) {
 	if len(a) <= 1 {
 		b = a
@@ -48,6 +50,8 @@ func Reverse(a []int) (b []int) {
 	return
 }
 
+//Search searches the given element value in array and 
+//returns all the indices matched
 func Search(a []int, val int) (b []int) {
 	for i, v := range a {
 		if v == val {
@@ -57,6 +61,8 @@ func Search(a []int, val int) (b []int) {
 	return
 }
 
+//IterFunc operates on each of the element of the array with given function
+//and returns the array with corresponding output.
 func IterFunc(a []int, f func(int) int) (b []int) {
 	done := make(chan bool, len(a))
 	b = make([]int, len(a))

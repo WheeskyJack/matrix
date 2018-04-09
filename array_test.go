@@ -9,7 +9,7 @@ import (
 
 func TestMain(m *testing.M) {
 	SetArrayStartIndexToOne()
-	fmt.Println("Launchin test suite with startOfArrayIndex=", startOfArrayIndex)
+	fmt.Println("Launching test suite with startOfArrayIndex=", startOfArrayIndex)
 	retCode := m.Run()
 	os.Exit(retCode)
 }
