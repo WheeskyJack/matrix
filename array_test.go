@@ -178,3 +178,14 @@ func TestIterFunc(t *testing.T) {
 		failOnMisMatch(t, a[i]*a[i], v, "")
 	}
 }
+
+func TestSum(t *testing.T) {
+	a := []int{1, 2, 4, 6}
+
+	s := Sum(a)
+	failOnMisMatch(t, 13, s, "")
+
+	a = []int{}
+	s = Sum(a)
+	failOnMisMatch(t, 0, s, "")
+}

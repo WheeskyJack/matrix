@@ -50,7 +50,7 @@ func Reverse(a []int) (b []int) {
 	return
 }
 
-//Search searches the given element value in array and 
+//Search searches the given element value in array and
 //returns all the indices matched
 func Search(a []int, val int) (b []int) {
 	for i, v := range a {
@@ -78,4 +78,12 @@ func IterFunc(a []int, f func(int) int) (b []int) {
 func parallelRuns(b []int, ind, val int, f func(int) int, done chan bool) {
 	b[ind] = f(val)
 	done <- true
+}
+
+//Sum adds all the elements in an array
+func Sum(a []int) (s int) {
+	for _, v := range a {
+		s += v
+	}
+	return
 }
