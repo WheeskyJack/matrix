@@ -189,3 +189,24 @@ func TestSum(t *testing.T) {
 	s = Sum(a)
 	failOnMisMatch(t, 0, s, "")
 }
+
+func TestAddArr(t *testing.T) {
+	a := []int{1, 2, 4, 6}
+	b := []int{1, 2, 4, 6}
+	e := []int{2, 4, 8, 12}
+	s, err := AddArr(a, b)
+
+	failOnErr(t, err, "")
+	for i, v := range s {
+		failOnMisMatch(t, e[i], v, "")
+	}
+
+	c := []int{1, 2}
+	_, err = AddArr(a, c)
+	failOnNil(t, err, "")
+
+	z1, z2 := []int{}, []int{}
+	zs, err := AddArr(z1, z2)
+	failOnMisMatch(t, 0, len(zs), "")
+	failOnErr(t, err, "")
+}

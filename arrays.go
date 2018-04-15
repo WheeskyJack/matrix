@@ -87,3 +87,16 @@ func Sum(a []int) (s int) {
 	}
 	return
 }
+
+//AddArr adds the two arrays.
+func AddArr(a, b []int) (s []int, err error) {
+	if len(a) != len(b) {
+		err = errors.New("array length mismatch")
+	} else {
+		s = make([]int, len(a))
+		for i, v := range a {
+			s[i] = v + b[i]
+		}
+	}
+	return
+}
